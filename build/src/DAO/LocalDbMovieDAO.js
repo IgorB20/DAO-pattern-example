@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Movie_1 = __importDefault(require("../models/Movie"));
 const database_1 = __importDefault(require("../database/database"));
 class LocalDbMovieDAO {
-    insert(title, description, year) {
-        const movie = new Movie_1.default(title, description, year);
+    insert(title, description, year, cast = []) {
+        const movie = new Movie_1.default(title, description, year, cast);
         database_1.default.push(movie);
         return movie;
     }
